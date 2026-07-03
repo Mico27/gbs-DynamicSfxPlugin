@@ -11,6 +11,14 @@ Gen 1 data (38 base sounds, 151 presets) recreated with those events.
 
 ---
 
+https://github.com/user-attachments/assets/6b1db76f-c14a-45a6-bbf9-87990330bf88
+
+<img width="572" height="1261" alt="image" src="https://github.com/user-attachments/assets/8aa47161-632a-4cb7-8144-4d0fb5a95ffa" />
+
+<img width="575" height="213" alt="image" src="https://github.com/user-attachments/assets/39f6d581-934c-4106-ad98-76f4ddc8bed3" />
+
+---
+
 ## How pokered does it (analysis)
 
 ### 38 base sounds + 2 modifier bytes = 151 presets
