@@ -1,0 +1,375 @@
+{
+  "_resourceType": "scene",
+  "id": "0c69a1f0-df2c-49a7-92fc-4dd478b4ab72",
+  "_index": 0,
+  "name": "Dynamic Sfx Demo",
+  "backgroundId": "1e5f9d6a-bdbc-43e6-8c34-22f5bb5dea05",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_dynsfx_demo",
+  "x": 256,
+  "y": 256,
+  "script": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "=== Dynamic Sfx Plugin Demo ===",
+        "__collapse": true
+      },
+      "id": "ec561ec9-3c96-480a-b8b6-ce7d35076a32"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Dynamic Sfx\nplugin demo!"
+        ],
+        "avatarId": ""
+      },
+      "id": "918df216-200d-4383-a4a3-c63972fa2d04"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "001 Bulbasaur!"
+        ],
+        "avatarId": ""
+      },
+      "id": "8e9fff5a-9954-40de-a36c-024cc6ec327e"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "dynsfx_preset_001_bulbasaur",
+        "wait": true
+      },
+      "id": "9120379b-0d43-47f1-8fa3-7e5793f09933"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "8596d6f2-4f73-402c-b6ee-1657b9a82c3d"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "025 Pikachu!"
+        ],
+        "avatarId": ""
+      },
+      "id": "2a3bec5d-fd49-4959-99a5-7bcf677aef9f"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "dynsfx_preset_025_pikachu",
+        "wait": true
+      },
+      "id": "d56f97cd-4f1e-4d52-a414-7499275b2c23"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "bf4edeff-eaf1-4b9e-918a-08d7e784534c"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "006 Charizard!"
+        ],
+        "avatarId": ""
+      },
+      "id": "70f0f470-4e83-4a88-adf3-f65d6e473951"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "dynsfx_preset_006_charizard",
+        "wait": true
+      },
+      "id": "a4ab55c7-0423-442f-8586-0a39cf9a18ba"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "8f2e61b3-2d72-4125-aa79-8ecd03656468"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "143 Snorlax!"
+        ],
+        "avatarId": ""
+      },
+      "id": "2e1ec796-19f9-4fa7-bf61-002a1fa04831"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "dynsfx_preset_143_snorlax",
+        "wait": true
+      },
+      "id": "2232a6d0-a3cb-493c-9eb7-fb29f4049e99"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "6668eddc-2339-4386-9fcb-093232050c38"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "150 Mewtwo!"
+        ],
+        "avatarId": ""
+      },
+      "id": "d53e6800-5e1d-4f98-b964-a50f91d83ae8"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "dynsfx_preset_150_mewtwo",
+        "wait": true
+      },
+      "id": "33509bec-57e5-4f10-82f8-9434dda11d6c"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "8b98d5e9-bd64-4f26-9bf9-1f21b6ea64f9"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Base 30, high\npitch, fast..."
+        ],
+        "avatarId": ""
+      },
+      "id": "2c299d84-c76d-4b6c-8c3a-629ac191c3e2"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_BASE_SFX",
+      "args": {
+        "data_symbol": "dynsfx_base_30",
+        "pitch": {
+          "type": "number",
+          "value": 220
+        },
+        "length": {
+          "type": "number",
+          "value": 32
+        },
+        "wait": true
+      },
+      "id": "d00186d0-a28d-4cba-a932-fd4caec05559"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "031193fa-7f5a-455d-ab2c-b7c093dfeab3"
+    },
+    {
+      "command": "EVENT_COMPILE_BASE_SFX",
+      "args": {
+        "data_symbol": "demo_base_sfx",
+        "pulse1NoteCount": 3,
+        "pulse1DutyEnabled": true,
+        "pulse1Duty0": 3,
+        "pulse1Duty1": 3,
+        "pulse1Duty2": 1,
+        "pulse1Duty3": 1,
+        "pulse1Length_0": 4,
+        "pulse1Volume_0": 15,
+        "pulse1Fade_0": 3,
+        "pulse1Freq_0": 1816,
+        "pulse1Length_1": 15,
+        "pulse1Volume_1": 14,
+        "pulse1Fade_1": 5,
+        "pulse1Freq_1": 1944,
+        "pulse1Length_2": 8,
+        "pulse1Volume_2": 9,
+        "pulse1Fade_2": 1,
+        "pulse1Freq_2": 1880,
+        "pulse2NoteCount": 2,
+        "pulse2DutyEnabled": true,
+        "pulse2Duty0": 2,
+        "pulse2Duty1": 2,
+        "pulse2Duty2": 0,
+        "pulse2Duty3": 0,
+        "pulse2Length_0": 5,
+        "pulse2Volume_0": 11,
+        "pulse2Fade_0": 3,
+        "pulse2Freq_0": 1800,
+        "pulse2Length_1": 15,
+        "pulse2Volume_1": 12,
+        "pulse2Fade_1": 5,
+        "pulse2Freq_1": 1928,
+        "noiseNoteCount": 2,
+        "noiseLength_0": 3,
+        "noiseVolume_0": 10,
+        "noiseFade_0": 1,
+        "noisePoly_0": 28,
+        "noiseLength_1": 14,
+        "noiseVolume_1": 9,
+        "noiseFade_1": 4,
+        "noisePoly_1": 44
+      },
+      "id": "1a8aafdb-6e10-4d6d-a329-d973b63f0168"
+    },
+    {
+      "command": "EVENT_COMPILE_PRESET_SFX",
+      "args": {
+        "data_symbol": "demo_preset_sfx",
+        "baseSymbol": "demo_base_sfx",
+        "pitch": 64,
+        "length": 200
+      },
+      "id": "b1476277-e886-4ec1-9df4-5a3f012a490f"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Authored\nbase sfx!"
+        ],
+        "avatarId": ""
+      },
+      "id": "f34401e8-4f74-41cf-a828-9435ec9698cc"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_BASE_SFX",
+      "args": {
+        "data_symbol": "demo_base_sfx",
+        "pitch": {
+          "type": "number",
+          "value": 0
+        },
+        "length": {
+          "type": "number",
+          "value": 128
+        },
+        "wait": true
+      },
+      "id": "3950ca17-40b4-4193-a15b-d8d8b738bcea"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "units": "time",
+        "frames": {
+          "type": "number",
+          "value": 30
+        }
+      },
+      "id": "555e51e1-07d0-49a2-8068-4607d2e9a876"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Same, pitched\nup + slower\nvia preset!"
+        ],
+        "avatarId": ""
+      },
+      "id": "3873973c-eb19-4a76-8f16-00483299bc3d"
+    },
+    {
+      "command": "EVENT_PLAY_COMPILED_PRESET_SFX",
+      "args": {
+        "data_symbol": "demo_preset_sfx",
+        "wait": true
+      },
+      "id": "0cabe7d5-b39b-40a5-a8db-8948c42c643d"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Done!"
+        ],
+        "avatarId": ""
+      },
+      "id": "9d3a099a-3fba-4b0f-aceb-e9911b6bee38"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}
