@@ -16,7 +16,8 @@ https://github.com/user-attachments/assets/6b1db76f-c14a-45a6-bbf9-87990330bf88
 2. [Project Setup](#project-setup)
 3. [Size Limits and Restrictions](#size-limits-and-restrictions)
 4. [Events Reference](#events-reference)
-5. [Memory Footprint](#memory-footprint)
+5. [Media](#media)
+6. [Memory Footprint](#memory-footprint)
 
 ---
 
