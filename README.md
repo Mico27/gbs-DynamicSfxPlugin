@@ -117,6 +117,13 @@ link time, so a typo in the symbol shows up as a linker error.
 - Compiled sound data lands in whatever ROM bank the packer picks; the
   player records the bank when playback starts and the VBL handler maps it
   around stream reads exactly like the engine's own sfx/music ISRs.
+- Almost nothing sits in bank 0. The synthesis engine runs from the plugin's
+  own switchable bank; only two stubs totalling **46 bytes** stay resident —
+  the VBL entry point and the routine that pages in the stream bank to fetch
+  the next command. Main-thread entry points read their banked data with the
+  engine's `MemcpyBanked`; the ISR-side fetch deliberately keeps its own
+  stack-local bank save, because everything in `bankdata.c` shares one static
+  scratch byte and is documented non-reentrant.
 - GB Studio *Play Sound Effect* events write to the same channels and will
   fight a playing dynamic sfx (last writer wins) — same behaviour as two SFX
   in the original game. Avoid overlapping them if it matters.
@@ -155,10 +162,53 @@ Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile 
 
 | | Cost |
 |---|---|
-| WRAM | +30 bytes |
-| ROM | +1,315 bytes |
+| WRAM | +34 bytes |
+| ROM (bank 0) | +46 bytes |
+| ROM (banked) | +1,261 bytes |
 
-- **WRAM:** 30 bytes of synthesis/playback state.
+- **WRAM:** 34 bytes of synthesis/playback state (including a 4-byte staging
+  window for the stream fetch).
 - **ROM:** the 1.3 KiB is the synthesis engine only — every sound you author with the Compile Base/Preset Sfx events adds its own data bytes to ROM on top.
+- **Bank 0:** only the VBL entry point (13 bytes) and the stream fetch stub
+  (33 bytes) are resident; everything else is in a switchable bank. For context
+  the same code built `NONBANKED` needed 1,147 bytes there. See
+  [Bank 0 (HOME) Usage](#bank-0-home-usage).
 - **Engine WRAM headroom:** the stock GB Studio 4.3.0 engine leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922 bytes). With this plugin installed roughly **824 bytes** remain. This figure does not depend on how many global variables your project defines: the script memory array has a fixed size of VM_HEAP_SIZE + (VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE) words — 768 + 16 × 64 = 1,792 words (3,584 bytes) with stock engine settings.
 - **SRAM:** not used.
+
+---
+
+<!-- BANK0:BEGIN -->
+## Bank 0 (HOME) Usage
+
+Bank 0 is the 16 KB non-switchable ROM bank that the GB Studio engine core,
+the interrupt handlers and the GBDK runtime all share. Banked ROM is cheap
+(add another bank), bank 0 is not, so it is usually the first thing a project
+runs out of.
+
+| | Bytes |
+|---|---|
+| Bank 0 used by this plugin | **+46** |
+| Bank 0 free with this plugin installed | **1,405** of 16,384 (91% used) |
+
+Everything else this plugin adds lives in banked ROM.
+
+| Module | This plugin | Stock engine | Bank 0 cost |
+|---|---|---|---|
+| `dynamic_sfx_player.c` | 46 | — | +46 |
+
+<details><summary>How this was measured</summary>
+
+GB Studio 4.3.2, DMG target, default engine settings. Each module's bank 0
+contribution is the `A _HOME size` record that SDCC writes into its `.rel`
+object, summed over the engine sources this plugin provides. Stock sizes come
+from building projects whose only plugin ships no engine C, so every module in
+them is the untouched engine; two such builds were compared and agreed on all
+73 shared modules.
+
+The "free" figure is a stock project with this plugin and nothing else. Your
+own number will differ: other plugins, and any engine settings that change what
+the core compiles, move it independently of this plugin.
+
+</details>
+<!-- BANK0:END -->
