@@ -18,6 +18,8 @@ https://github.com/user-attachments/assets/6b1db76f-c14a-45a6-bbf9-87990330bf88
 4. [Events Reference](#events-reference)
 5. [Media](#media)
 6. [Memory Footprint](#memory-footprint)
+7. [Bank 0 (HOME) Usage](#bank-0-home-usage)
+8. [Changelog](#changelog)
 
 ---
 
