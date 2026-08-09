@@ -198,3 +198,15 @@ the core compiles, move it independently of this plugin.
 
 </details>
 <!-- BANK0:END -->
+
+## Changelog
+
+Grouped by the date each change was merged into the official
+[gb-studio-plugins](https://github.com/gb-studio-dev/gb-studio-plugins) repository.
+
+Only bug fixes, new features and feature changes are listed. Engine version
+bumps, patch regeneration, packaging fixes and documentation edits are omitted.
+
+### 2026-07-03
+
+- Initial release: a Gen 1 cry-style sound synthesis engine, with sounds authored through the Compile Base / Preset Sfx events rather than shipped as built-in data.
